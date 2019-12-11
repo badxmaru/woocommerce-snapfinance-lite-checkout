@@ -1,0 +1,1 @@
+# woocommerce-snapfinance-lite-checkout
