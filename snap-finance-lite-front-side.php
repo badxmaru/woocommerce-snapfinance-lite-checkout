@@ -17,9 +17,9 @@ class snap_finance_lite_front_side {
         wp_enqueue_style('snap-finance-popup-style', plugins_url('css/snap-finance-popup-style.css', __FILE__), false, '1.1', 'all');
 
         wp_enqueue_script('jquery-magnific-popup-script', plugins_url('js/jquery.magnific-popup.js', __FILE__), array('jquery'), 1.1, true);
-        wp_enqueue_script('woocommerce-gateway-snap-finance-lite-script', plugins_url('js/woocommerce-gateway-snap-finance-lite.js', __FILE__), array('jquery'), 1.1, true);
+        wp_enqueue_script('snap-finance-lite-script', plugins_url('js/snap-finance-lite.js', __FILE__), array('jquery'), 1.1, true);
         if (is_checkout()) {
-            wp_enqueue_script('woocommerce-gateway-snap-finance-lite-checkout-script', plugins_url('js/woocommerce-gateway-snap-finance-lite-checkout.js', __FILE__), array('jquery'), '1.0.0', true);
+            wp_enqueue_script('snap-finance-lite-checkout-script', plugins_url('js/snap-finance-lite-checkout.js', __FILE__), array('jquery'), '1.0.0', true);
         }
     }
     /*******  sanp-finance Lite Button *******/

@@ -15,13 +15,13 @@
  * @wordpress-plugin
  * Plugin Name:       Snap Finance Lite
  * Plugin URI:        http://snapfinance.com/
- * Description:       Pay with a credit card generated via our super-cool payment gateway, upon approval.
+ * Description:       No Credit Needed Financing Up to $3,000. Easy to Apply. Get Fast, Flexible Financing for the Things You Need.
  * Version:           1.0.0
  * Author:            Snap Finance
  * Author URI:        http://snapfinance.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       woocommerce-gateway-snap-finance-lite
+ * Text Domain:       snap-finance-lite
  * Domain Path:       /languages
  */
 // If this file is called directly, abort.
@@ -49,6 +49,6 @@ function snap_finance_lite_add_gateway_class($gateways) {
 add_action('plugins_loaded', 'snap_finance_lite_init_gateway_class');
 
 function snap_finance_lite_init_gateway_class() {
-    include 'woocommerce-gateway-snap-finance-lite-front-side.php';
-    include 'woocommerce-gateway-snap-finance-lite-class.php';
+    include 'snap-finance-lite-front-side.php';
+    include 'snap-finance-lite-class.php';
 }

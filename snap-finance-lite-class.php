@@ -10,7 +10,7 @@ class WC_Snap_Finance_Lite_Gateway extends WC_Payment_Gateway {
         $this->icon = ''; // URL of the icon that will be displayed on checkout page near your gateway name
         $this->has_fields = true; // in case you need a custom credit card form
         $this->method_title = 'Snap Finance Lite';
-        $this->method_description = 'No Credit Needed Financing Up to $3,000. Easy to Apply. Approvals up to 80%. Get Fast, Flexible Financing for the Things You Need. Use this shortcode for show banner on your pages [snap_finance_lite_banner]'; // will be displayed on the options page
+        $this->method_description = 'No Credit Needed Financing Up to $3,000. Easy to Apply. Get Fast, Flexible Financing for the Things You Need. Use this shortcode for show banner on your pages [snap_finance_lite_banner].'; // will be displayed on the options page
         // gateways can support subscriptions, refunds, saved payment methods,
         // but in this tutorial we begin with simple payments
         $this->supports = array(
@@ -60,7 +60,7 @@ class WC_Snap_Finance_Lite_Gateway extends WC_Payment_Gateway {
                 'title' => 'Description',
                 'type' => 'textarea',
                 'description' => 'This controls the description which the user sees during checkout.',
-                'default' => 'No Credit Needed Financing Up to $3,000. Easy to Apply. Approvals up to 80%. Get Fast, Flexible Financing for the Things You Need.',
+                'default' => 'No Credit Needed Financing Up to $3,000. Easy to Apply. Get Fast, Flexible Financing for the Things You Need.',
             ),
             'snap_finance_lite_mode' => array(
                 'title' => 'Mode',
@@ -93,7 +93,7 @@ class WC_Snap_Finance_Lite_Gateway extends WC_Payment_Gateway {
                 'type' => 'select',
                 'options' => array('logo_btn01' => 'Logo 1', 'logo_btn02' => 'Logo 2', 'logo_btn03' => 'Logo 3', 'logo_btn04' => 'Logo 4', 'logo_btn05' => 'Logo 5'),
                 'description' => '',
-                'default' => 'stage',
+                'default' => 'logo_btn01',
             ),
         );
     }
@@ -125,8 +125,8 @@ class WC_Snap_Finance_Lite_Gateway extends WC_Payment_Gateway {
      * Custom CSS and JS, in most cases required only when you decided to go with a custom credit card form
      */
     public function snap_finance_lite_payment_scripts() {
-        wp_enqueue_script('woocommerce-gateway-snap-finance-lite-admin-script', plugins_url('js/woocommerce-gateway-snap-finance-lite-admin.js', __FILE__), array('jquery'), 1.1, true);
-        wp_localize_script('woocommerce-gateway-snap-finance-lite-admin-script', 'snap_finance_lite_url', array('image_folder' => plugins_url('images', __FILE__)));
+        wp_enqueue_script('snap-finance-lite-admin-script', plugins_url('js/snap-finance-lite-admin.js', __FILE__), array('jquery'), 1.1, true);
+        wp_localize_script('snap-finance-lite-admin-script', 'snap_finance_lite_url', array('image_folder' => plugins_url('images', __FILE__)));
     }
     
     /*

@@ -1,4 +1,4 @@
-# WooCommerce Lite Checkout
+﻿# WooCommerce Lite Checkout
 
 ## Description
 
@@ -54,3 +54,4 @@ Snap Finance�s WooCommerce checkout plugin offers an easy way to enable your W
 -   Change in plugin description.
 -   Change in CSS of popup.
 -   Read only field for plugin title and description.
+-   Change in file naming convention.
