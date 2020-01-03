@@ -3,7 +3,7 @@
 ## Description
 
 Checkout Lite provides an eCommerce merchants to offer finance option to their customers. Checkout Lite provides a quick and easy integration for merchants while keeping the customers within the purchase funnel. The Snap Finance banner on the PDP and Checkout page leads to a consumer loan application. When approved the customer will receive a virtual card to use at the checkout.
-Snap Finance�s WooCommerce checkout plugin offers an easy way to enable your WooCommerce powered eCommerce store to offer Lease to Buy finance options.
+Snap Finance WooCommerce checkout plugin offers an easy way to enable your WooCommerce powered eCommerce store to offer Lease to Buy finance options.
 
 ## Installation
 
