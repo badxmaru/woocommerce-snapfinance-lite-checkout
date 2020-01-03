@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Snap Finance Lite
  * Plugin URI:        http://snapfinance.com/
- * Description:       No Credit Needed Financing Up to $3,000. Easy to Apply. Get Fast, Flexible Financing for the Things You Need.
+ * Description:       No credit needed. Financing up to $3,000. Easy to apply. Get fast, flexible financing for the things you need.
  * Version:           1.0.0
  * Author:            Snap Finance
  * Author URI:        http://snapfinance.com/
@@ -30,7 +30,7 @@ if (!defined('WPINC')) {
 }
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Start at version 1.0.0
  * Rename this for your plugin and update it as you release new versions.
  */
 define('Woocommerce_Gateway_Snap_Finance_Lite_VERSION', '1.0.0');
@@ -49,6 +49,11 @@ function snap_finance_lite_add_gateway_class($gateways) {
 add_action('plugins_loaded', 'snap_finance_lite_init_gateway_class');
 
 function snap_finance_lite_init_gateway_class() {
+	add_action( 'init', 'snap_finance_lite_load_textdomain' );
     include 'snap-finance-lite-front-side.php';
     include 'snap-finance-lite-class.php';
+}
+
+function snap_finance_lite_load_textdomain() {
+	load_plugin_textdomain( 'snap-finance-lite', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }

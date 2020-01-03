@@ -13,13 +13,13 @@ class snap_finance_lite_front_side {
     }
     /*******  sanp-finance add styls and scripts *******/
     public function snap_finance_lite_add_scripts() {
-        wp_enqueue_style('magnific-popup-style', plugins_url('css/magnific-popup.css', __FILE__), false, '1.1', 'all');
-        wp_enqueue_style('snap-finance-popup-style', plugins_url('css/snap-finance-popup-style.css', __FILE__), false, '1.1', 'all');
+        wp_enqueue_style('magnific-popup-style', plugins_url('assets/css/magnific-popup.css', __FILE__), false, '1.1', 'all');
+        wp_enqueue_style('snap-finance-popup-style', plugins_url('assets/css/snap-finance-popup-style.css', __FILE__), false, '1.1', 'all');
 
-        wp_enqueue_script('jquery-magnific-popup-script', plugins_url('js/jquery.magnific-popup.js', __FILE__), array('jquery'), 1.1, true);
-        wp_enqueue_script('snap-finance-lite-script', plugins_url('js/snap-finance-lite.js', __FILE__), array('jquery'), 1.1, true);
+        wp_enqueue_script('jquery-magnific-popup-script', plugins_url('assets/js/jquery.magnific-popup.js', __FILE__), array('jquery'), 1.1, true);
+        wp_enqueue_script('snap-finance-lite-script', plugins_url('assets/js/snap-finance-lite.js', __FILE__), array('jquery'), 1.1, true);
         if (is_checkout()) {
-            wp_enqueue_script('snap-finance-lite-checkout-script', plugins_url('js/snap-finance-lite-checkout.js', __FILE__), array('jquery'), '1.0.0', true);
+            wp_enqueue_script('snap-finance-lite-checkout-script', plugins_url('assets/js/snap-finance-lite-checkout.js', __FILE__), array('jquery'), '1.0.0', true);
         }
     }
     /*******  sanp-finance Lite Button *******/
@@ -28,7 +28,7 @@ class snap_finance_lite_front_side {
         if ($this->snap_finance_lite_setting['enabled'] == 'yes') {
             ?>
             <div class="sfl_button_div">
-                <a href="#sfl-popup-detail" class="sfl-popup-modal"><img src="<?php echo plugins_url('images/', __FILE__) . $this->snap_finance_lite_setting['snap_finance_lite_banner_style']; ?>.png"/></a>
+                <a href="#sfl-popup-detail" class="sfl-popup-modal"><img src="<?php echo plugins_url('assets/images/', __FILE__) . $this->snap_finance_lite_setting['snap_finance_lite_banner_style']; ?>.png"/></a>
             </div>
             <?php
         }
@@ -46,18 +46,18 @@ class snap_finance_lite_front_side {
         ?>
         <div id="sfl-popup-detail" class="sfl-popup-detail white-popup-block mfp-hide">
             <div class="sfl-logo-img">
-                <img src="<?php echo plugins_url('images/', __FILE__) . $this->snap_finance_lite_setting['snap_finance_lite_logo_style']; ?>.png"/>
+                <img src="<?php echo plugins_url('assets/images/', __FILE__) . $this->snap_finance_lite_setting['snap_finance_lite_logo_style']; ?>.png"/>
             </div>
             <div class="sfl-desc">
-                <div class="title">Financing in snap! Apply now and get up to $3000 to use today at checkout</div>
+                <div class="title"><?php echo __( 'Financing in snap! Apply now and get up to $3000 to use today at checkout','snap-finance-lite'); ?></div>
                 <ul>
-                    <li>Pay over 12 months</li>
-                    <li>100 day payoff option</li>
-                    <li>Easy payments on your paydays</li>
+                    <li><?php echo __('Pay over 12 months','snap-finance-lite'); ?></li>
+                    <li><?php echo __('100 day payoff option','snap-finance-lite'); ?></li>
+                    <li><?php echo __('Easy payments on your paydays','snap-finance-lite'); ?></li>
                 </ul>
             </div>
             <div class="sfl-button">
-                <a target="_blank" href="<?php echo $apply_link; ?>" class="sfl-apply-button">Continue to Apply</a>
+                <a target="_blank" href="<?php echo $apply_link; ?>" class="sfl-apply-button"><?php echo __('Continue to Apply','snap-finance-lite'); ?></a>
             </div>
         </div>
         <?php
