@@ -55,5 +55,5 @@ Snap Finance�s WooCommerce checkout plugin offers an easy way to enable your W
 -   Change in CSS of popup.
 -   Read only field for plugin title and description.
 -   Change in file naming convention.
--   Updated plugin structure according to worpdress marketplace standards.
+-   Updated plugin structure according to WordPress marketplace standards.
 -   Other bug fixes.
