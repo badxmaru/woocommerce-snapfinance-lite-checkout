@@ -1,1 +1,0 @@
-jQuery(document).ready(function ($) {    jQuery('.sfl_button_div .sfl-popup-modal').magnificPopup({        type: 'inline'    });    jQuery(document.body).on('updated_checkout', function () {        jQuery('.sfl_button_div .sfl-popup-modal').magnificPopup({            type: 'inline'        });    });});

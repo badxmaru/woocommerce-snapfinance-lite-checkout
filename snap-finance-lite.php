@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              snap_finance.com
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Woocommerce_Gateway_Snap_Finance_Lite
  *
  * @wordpress-plugin
  * Plugin Name:       Snap Finance Lite
  * Plugin URI:        http://snapfinance.com/
  * Description:       No credit needed. Financing up to $3,000. Easy to apply. Get fast, flexible financing for the things you need.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Snap Finance
  * Author URI:        http://snapfinance.com/
  * License:           GPL-2.0+
@@ -33,7 +33,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0
  * Rename this for your plugin and update it as you release new versions.
  */
-define('Woocommerce_Gateway_Snap_Finance_Lite_VERSION', '1.0.0');
+define('Woocommerce_Gateway_Snap_Finance_Lite_VERSION', '1.0.1');
 /*
  * This action hook registers our PHP class as a WooCommerce payment gateway
  */
@@ -46,8 +46,40 @@ function snap_finance_lite_add_gateway_class($gateways) {
 /*
  * The class itself, please note that it is inside plugins_loaded action hook
  */
-add_action('plugins_loaded', 'snap_finance_lite_init_gateway_class');
+$activated = true;
+if ( function_exists( 'is_multisite' ) && is_multisite() ) {
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+		$activated = false;
+	}
+} else {
+	if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		$activated = false;
+	}
+}
+/*
+ * The class itself, please note that it is inside plugins_loaded action hook
+ */
+if ( $activated ) { 
+	add_action( 'plugins_loaded', 'snap_finance_lite_init_gateway_class' );
+} else {	
+	if ( !function_exists( 'deactivate_plugins' ) ) { 
+		require_once ABSPATH . '/wp-admin/includes/plugin.php'; 
+	} 
+	deactivate_plugins( plugin_basename( __FILE__ ) );
+	add_action( 'admin_notices', 'snap_finance_lite_error_notice' );
+}
 
+function snap_finance_lite_error_notice() {
+	?>
+	<div class="error notice is-dismissible">
+		<p><?php _e( 'Woocommerce is not activated, Please activate Woocommerce first to install Snap Finance Lite.', 'snap-finance-lite' ); ?></p>
+	</div>
+	<style>
+		#message{display:none;}
+	</style>
+	<?php
+}
 function snap_finance_lite_init_gateway_class() {
 	add_action( 'init', 'snap_finance_lite_load_textdomain' );
     include 'snap-finance-lite-front-side.php';
