@@ -39,9 +39,9 @@ class snap_finance_lite_front_side {
     public function snap_finance_lite_popup_detail() {
         $apply_link = '';
         if ($this->snap_finance_lite_setting['snap_finance_lite_mode'] == "stage") {
-            $apply_link = $this->snap_finance_lite_setting['snap_finance_lite_stage_merchant_key'];
+            $apply_link = 'https://apply-sandbox.snapfinance.com/steps/start?paramId='.$this->snap_finance_lite_setting['snap_finance_lite_stage_merchant_key'];
         } else {
-            $apply_link = $this->snap_finance_lite_setting['snap_finance_lite_live_merchant_key'];
+            $apply_link = 'https://apply.snapfinance.com/steps/start?paramId='.$this->snap_finance_lite_setting['snap_finance_lite_live_merchant_key'];
         }
         ?>
         <div id="sfl-popup-detail" class="sfl-popup-detail white-popup-block mfp-hide">

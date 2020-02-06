@@ -61,3 +61,6 @@ Snap Finance WooCommerce checkout plugin offers an easy way to enable your WooCo
 ### 1.0.1
 -   Updated error handling condition which checks if woocommerce is installed or not
 -   Minor bug fixes 
+
+### 1.0.2
+-   Updated URL settings in plugin.

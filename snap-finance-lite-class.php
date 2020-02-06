@@ -70,13 +70,13 @@ class WC_Snap_Finance_Lite_Gateway extends WC_Payment_Gateway {
                 'default' => 'stage',
             ),
             'snap_finance_lite_stage_merchant_key' => array(
-                'title' => 'Stage Merchant Key URL',
+                'title' => 'Staging Param Id',
                 'type' => 'text',
                 'description' => '',
                 'default' => '',
             ),
             'snap_finance_lite_live_merchant_key' => array(
-                'title' => 'Live Merchant Key URL',
+                'title' => 'Live Param Id',
                 'type' => 'text',
                 'description' => '',
                 'default' => '',

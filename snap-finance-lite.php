@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              snap_finance.com
- * @since             1.0.1
+ * @since             1.0.2
  * @package           Woocommerce_Gateway_Snap_Finance_Lite
  *
  * @wordpress-plugin
  * Plugin Name:       Snap Finance Lite
  * Plugin URI:        http://snapfinance.com/
  * Description:       No credit needed. Financing up to $3,000. Easy to apply. Get fast, flexible financing for the things you need.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Snap Finance
  * Author URI:        http://snapfinance.com/
  * License:           GPL-2.0+
@@ -33,7 +33,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0
  * Rename this for your plugin and update it as you release new versions.
  */
-define('Woocommerce_Gateway_Snap_Finance_Lite_VERSION', '1.0.1');
+define('Woocommerce_Gateway_Snap_Finance_Lite_VERSION', '1.0.2');
 /*
  * This action hook registers our PHP class as a WooCommerce payment gateway
  */
