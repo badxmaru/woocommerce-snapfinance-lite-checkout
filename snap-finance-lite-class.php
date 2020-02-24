@@ -65,12 +65,12 @@ class WC_Snap_Finance_Lite_Gateway extends WC_Payment_Gateway {
             'snap_finance_lite_mode' => array(
                 'title' => 'Mode',
                 'type' => 'select',
-                'options' => array('stage' => 'Stage', 'live' => 'Live'),
+                'options' => array('stage' => 'Sandbox', 'live' => 'Live'),
                 'description' => '',
                 'default' => 'stage',
             ),
             'snap_finance_lite_stage_merchant_key' => array(
-                'title' => 'Staging Param Id',
+                'title' => 'Sandbox Param Id',
                 'type' => 'text',
                 'description' => '',
                 'default' => '',
